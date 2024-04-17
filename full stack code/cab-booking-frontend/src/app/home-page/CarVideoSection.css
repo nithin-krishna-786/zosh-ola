@@ -1,0 +1,8 @@
+.carVideoSection{
+    /* background-color: black; */
+    /* height: 120vh; */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width:100%;
+    /* border: 1px solid black; */
+
+}

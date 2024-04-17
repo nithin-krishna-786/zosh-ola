@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "81253446-630a-46fb-a48d-16bcb7f6c316",
+		"name": "Cab Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": []
+		},
+		{
+			"name": "home controller",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "01c8db46-2d0b-4ef5-87e2-c955040fc4b2",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\":\"saaho\",\r\n    \"email\":\"saaho@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"mobile\":\"9090909791\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/auth/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"auth",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Driver",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"raju driver\",\r\n    \"email\":\"raju@gmail.com\",\r\n    \"mobile\":\"9034876532\",\r\n    \"password\":\"12345678\",\r\n    \"latitude\": 37.7888,\r\n    \"longitude\": -122.4261,\r\n    \"license\":{\r\n        \"licenseNumber\":982934872342,\r\n        \"licenseState\":\"Mumbai\",\r\n        \"licenseExiprationDate\":\"10/07/2050\"\r\n    },\r\n    \"vehicle\":{\r\n        \"make\":\"Toyora\",\r\n        \"model\":\"Corolla\",\r\n        \"year\":2018,\r\n        \"licensePlate\":\"ABC1235\",\r\n        \"color\":\"White\",\r\n        \"capacity\":4\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/auth/driver/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"auth",
+						"driver",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Req Driver Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MDg1NzYyMSwiZXhwIjoxNjgwOTQ0MDIxLCJlbWFpbCI6ImZhc3RAZ21haWwuY29tIn0.fSQ7aCquUJyhU_tkIdhqrdmZxfExrvllUMWo4n2GTYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/drivers/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"drivers",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Req User Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MDg1Nzc3NywiZXhwIjoxNjgwOTQ0MTc3LCJlbWFpbCI6InNpdGFAZ21haWwuY29tIn0.Ic_rpT__Y24uG_1s0i1LVZnY5mIZB150yOxB3g3Y-Ic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Singin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"saaho@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MTIxODQ5NywiZXhwIjoxNjgxMzA0ODk3LCJlbWFpbCI6InJlbmNob0BnbWFpbC5jb20ifQ.ZTGW3MYX-Fyy_TEnHt4UlFn5IJtTA8aOQ1e3MkyNyJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ride Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4NjA1MDQwMywiZXhwIjoxNjg2MTM2ODAzLCJlbWFpbCI6InJhYW1AZ21haWwuY29tIn0.zmMLJXwVq_qtB2WBQWz2xf7NJtYJ2YGPuy17-Ezlirw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pickupLatitude\":37.8020,\r\n    \"pickupLongitude\":-122.4273,\r\n    \"destinationLatitude\":37.7978,\r\n    \"destinationLongitude\":-122.4202\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5454/api/rides/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"rides",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find rid by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MTUwNTU4NSwiZXhwIjoxNjgxNTkxOTg1LCJlbWFpbCI6InNhYWhvQGdtYWlsLmNvbSJ9.P2RzJUTNnK-0bOtMjWxH_yhY3xOYJTpndmgFsf-TcHQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/rides/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"rides",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Ride",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MTQ4NDQwMCwiZXhwIjoxNjgxNTcwODAwLCJlbWFpbCI6ImRldkBnbWFpbC5jb20ifQ.2--DEpE0hP3DaG2EuT7UG5fbwTQEiNzuyLY9o623G0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/rides/12/accept",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"rides",
+						"12",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Ride",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MTQ4NDQwMCwiZXhwIjoxNjgxNTcwODAwLCJlbWFpbCI6ImRldkBnbWFpbC5jb20ifQ.2--DEpE0hP3DaG2EuT7UG5fbwTQEiNzuyLY9o623G0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/rides/13/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"rides",
+						"13",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "End Ride",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDb2RlIFdpdGggWm9zaCIsImlhdCI6MTY4MTQ4NDQwMCwiZXhwIjoxNjgxNTcwODAwLCJlbWFpbCI6ImRldkBnbWFpbC5jb20ifQ.2--DEpE0hP3DaG2EuT7UG5fbwTQEiNzuyLY9o623G0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5454/api/rides/13/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5454",
+					"path": [
+						"api",
+						"rides",
+						"13",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,22 @@
+
+
+# How To Set Up Cab Booking Project In Your Local Machine
+
+
+
+## Spring boot backend
+
+1. create database in you mysql and give it name “**cab_booking_youtube**”
+
+2. change user name and password of your mysql in application.properties file
+
+
+
+## Next js Frontend
+
+1. npm i
+2. npm run dev
+
+
+
+https://watery-lunaria-74f.notion.site/How-To-Set-Up-Cab-Booking-Project-In-Your-Local-Machine-080ae74c66c04a0ab4bc856df813fd7e
